@@ -6,7 +6,8 @@
 }
 header{
     background-color: #000;
-    padding:10px 0px 10px 0px;
+    padding:13px 0px 10px 0px;
+    height:10%;
     
 }
 header div{
@@ -21,10 +22,12 @@ header a{
 }
 #description__container{
     background-color: #c6bfbf;
+    
 }
 #description{
     margin-left: 15%;
     margin-right:15%;
+    height: 50%;
     
 }
 #main__content{
@@ -32,17 +35,19 @@ header a{
     flex-direction: row;
     margin-left: 15%;
     margin-right:15%;
-
+    
 }
-#main__content p{
-    margin-right:4%;
-
+#main__content .main__content--paragraphs{
+    margin-right:4.5%;
+    margin-bottom: 15%;
 }
+
 footer{
     display: flex;
     flex-direction: row;
     background-color: #0b4d14;
-    padding:10px 0px 10px 0px;
+    padding:13px 0px 10px 0px;
+    height:10%;
 }
 footer #left__footer{
     margin-left: 14%;
