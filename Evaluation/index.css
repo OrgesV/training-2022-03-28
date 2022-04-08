@@ -1,0 +1,101 @@
+:root{
+
+    --color-grey:rgb(221, 221, 221);
+    --color-light:rgb(250, 242, 198);
+    --color-blue:rgb(63, 137, 235);
+    --color-red:rgb(221, 86, 86);
+    --color-green:rgb(57, 181, 16);
+}
+html,
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+}
+#boxes{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height:80%;
+}
+#pending,
+#completed{
+    background-color: var(--color-grey);
+    margin: 10px;
+    padding-left: 10px;
+    width:35%;
+    height: 100%;
+    border-radius: 5px;
+    text-align: left;
+}
+#pending{
+    margin-left: 13%;
+}
+#inputText{
+    margin: 10px;
+}
+#inputText input{
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--color-grey);
+}
+#input-button{
+    color:white;
+    background-color: var(--color-blue);
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid var(--color-blue);
+    padding:3px 5px 3px 5px;
+}
+#input-button:active{
+    font-size: 12px;
+}
+.item{
+    background-color: var(--color-light);
+    border-radius: 5px;
+    margin:10px;
+    list-style-type:none;
+}
+.edit{
+    margin:0px 5px 0px 0px;
+    width:25px;
+    float: right;
+    background-color: var(--color-blue);
+    color: white;
+    border-radius: 5px;
+}
+.edit:active{
+    font-size: 12px;
+}
+.delete{
+    margin:0px 5px 0px 0px;
+    width:25px;
+    float: right;
+    color: white;
+    background-color: var(--color-red);
+    border-radius: 5px;
+}
+.delete:active{
+    font-size: 12px;
+}
+.move{
+    margin:0px 5px 0px 0px;
+    float: right;
+    width:25px;
+    color: white;
+    background-color: var(--color-green);
+    border-radius: 5px;
+}
+.move:active{
+    font-size: 12px;
+}
