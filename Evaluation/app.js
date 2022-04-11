@@ -7,13 +7,6 @@ const Controller = ((model,view)=>{
 
     const state = new model.State();
     const addTodo =()=>{
-        // const newtodo = new model.Todo("Goodbye");
-        // console.log(newtodo)
-        // model.addTodo(newtodo).then((todo) => {
-        //     console.log(newtodo)
-        //     state.todolist[0] = [todo, ...state.pendingTodolist];
-        // });
-
         const inputButton = document.querySelector(view.domstr.inputButton);
         const todoInput = document.querySelector(view.domstr.todoInput)
         inputButton.addEventListener("click", () => {
@@ -60,7 +53,17 @@ const Controller = ((model,view)=>{
 
             }
             if(event.target.classList.contains('move')){
-
+                let pendingArr = []
+                let completedArr = []
+                let temp
+                temp = state.todoList[0].filter((todo)=>{
+                    return todo.id == event.target.id
+                })
+                temp[0].isCompleted = true
+                model.updateTodo(temp[0].content,temp[0].isCompleted,temp[0].id)
+                completedArr = [...state.todoList[1],...temp]
+                pendingArr = state.todoList[0].filter((todo)=> todo.id != event.target.id)
+                state.todoList = [pendingArr,completedArr]
             }
         })
         completed.addEventListener("click",(event)=>{
@@ -81,8 +84,17 @@ const Controller = ((model,view)=>{
                 
             }
             if(event.target.classList.contains('move')){
-                console.log(event.target.id)
-                //state.todoList[0]
+                let pendingArr = []
+                let completedArr = []
+                let temp
+                temp = state.todoList[1].filter((todo)=>{
+                    return todo.id == event.target.id
+                })
+                temp[0].isCompleted = false
+                model.updateTodo(temp[0].content,temp[0].isCompleted,temp[0].id)
+                pendingArr = [...state.todoList[0],...temp]
+                completedArr = state.todoList[1].filter((todo)=> todo.id != event.target.id)
+                state.todoList = [pendingArr,completedArr]
             }
         })
 
